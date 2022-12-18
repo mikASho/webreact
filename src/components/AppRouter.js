@@ -1,20 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import {Routes, Route, Navigate} from 'react-router-dom';
-import { authRoutes } from '../routes';
-import { publicRoutes } from '../routes';
+import { authRoutes, publicRoutes } from '../routes';
+import { MAIN_ROUTE } from '../utils/consts';
+import { Context } from '../index';
 
-export default class AppRouter extends Component {
-  render() {
-    const isAuth = false;
+const AppRouter = () => {
+    const {user} = useContext(Context)
+    console.log(user)
     return (
         <Routes>
-           {isAuth === true && authRoutes.map(({path, Component}) =>
+           {user.isAuth === true && authRoutes.map(({path, Component}) =>
               <Route key={path} path={path} element = {<Component/>}  exact/>
            )}
            {publicRoutes.map(({path, Component}) =>
               <Route key={path} path={path} element = {<Component/>}  exact/>
            )}
-        </Routes>
+           <Route path='*' element={<Navigate to = {MAIN_ROUTE}/>} />
+        </Routes>      
     )
   }
-}
+export default AppRouter;

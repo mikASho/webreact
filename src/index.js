@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import UserStore from './store/UsersStore'
+
+export const Context = createContext(null);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Header/>
+  <Context.Provider value={{
+    user: new UserStore()
+  }}>
     <App />
-    <Footer/>
-  </React.StrictMode>
+  </Context.Provider>
 );
 
