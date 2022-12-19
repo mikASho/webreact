@@ -9,7 +9,7 @@ export default class UserStore {
     setIsAuth(bool){
         this._isAuth = bool;
     }
-    setIsAuth(user){
+    setIsUser(user){
         this._user = user;
     }
 
