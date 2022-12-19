@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, Link} from 'react';
 import { Context } from '../index';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -21,7 +21,7 @@ const NavBar = observer( () => {
                         Админ панель
                     </Button>
                     <Button onClick={() => user.setIsAuth(false)} variant={'outline-light'} style={{marginLeft:"20px"}}>
-                        Выйти
+                        <a href='/main' style={{textDecoration: "none"}}>Выйти</a> {/*Link не использовал т.к. какой-то баг появляется */}
                     </Button>      
                 </Nav>
                 :
