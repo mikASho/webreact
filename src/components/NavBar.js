@@ -14,14 +14,14 @@ const NavBar = observer( () => {
     return (
         <Navbar style={{background: "#121212"}}>
         <Container>
-          <NavLink style={{color: "white"}} to={MAIN_ROUTE}>ZeroLine</NavLink>
+          <NavLink style={{color: "white", textDecoration: "none", fontSize: "36px"}} to={MAIN_ROUTE}>ZeroLine</NavLink>
             {user.isAuth ?
                 <Nav className="ml-auto" style={{color:"white"}}>
                     <Button onClick={() => history(ADMIN_ROUTE)} variant={'outline-light'}>
                         Админ панель
                     </Button>
                     <Button onClick={() => user.setIsAuth(false)} variant={'outline-light'} style={{marginLeft:"20px"}}>
-                        <a href='/main' style={{textDecoration: "none"}}>Выйти</a> {/*Link не использовал т.к. какой-то баг появляется */}
+                        <a href='/main' style={{textDecoration: "none", color:"white"}}>Выйти</a> {/*Link не использовал т.к. какой-то баг появляется */}
                     </Button>      
                 </Nav>
                 :
