@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { Button, Container, Form, Card } from 'react-bootstrap'
-import { REGISTRATION_ROUTE, LOGIN_ROUTE } from '../utils/consts';
+import { REGISTRATION_ROUTE, LOGIN_ROUTE, MAIN_ROUTE } from '../utils/consts';
 import { useLocation, Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import { Context } from '../index';
@@ -34,8 +34,8 @@ const Auth = () => {
                           Есть аккаунт? <Link to={LOGIN_ROUTE}>Войдите</Link>
                         </div>
                       }
-                        <Button onClick={() => user.setIsAuth(true)}>
-                          {isLogin ? 'Войти' : 'Регистрация'}
+                        <Button onClick={() => user.setIsAuth(true)} >
+                          <Link to = {MAIN_ROUTE} style={{color: "black", textDecoration: "none"}}>{isLogin ? 'Войти' : 'Регистрация'} </Link> 
                       </Button>
                   </Form>
                   
