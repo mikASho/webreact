@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { Container, Button } from 'react-bootstrap';
 
-export default class Admin extends Component {
-  render() {
+const Admin = () => {
     return (
-        <div>
-            ADMIN
-        </div>
+        <Container className='d-flex flex-column'>
+            <Button variant={'outline-dark'} className='mt-2'>Добавить задание</Button>
+            <Button variant={'outline-dark'} className='mt-2'>Профиль</Button>
+        </Container>
     )
-  }
 }
+export default Admin;

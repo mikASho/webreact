@@ -1,10 +1,12 @@
-import React from 'react'
-import { Button, Container, Form, Card, NavLink } from 'react-bootstrap'
+import React, {useContext} from 'react'
+import { Button, Container, Form, Card } from 'react-bootstrap'
 import { REGISTRATION_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 import { useLocation, Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
+import { Context } from '../index';
 
 const Auth = () => {
+  const {user} = useContext(Context);
   const location = useLocation();
   const isLogin = location.pathname === LOGIN_ROUTE;
   console.log(location)
@@ -32,7 +34,7 @@ const Auth = () => {
                           Есть аккаунт? <Link to={LOGIN_ROUTE}>Войдите</Link>
                         </div>
                       }
-                        <Button>
+                        <Button onClick={() => user.setIsAuth(true)}>
                           {isLogin ? 'Войти' : 'Регистрация'}
                       </Button>
                   </Form>
