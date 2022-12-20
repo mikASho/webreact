@@ -32,15 +32,15 @@ const Auth = () => {
                   />
                   <Form>
                       {isLogin ? 
-                      <div style={{position: "relative", top: 180}}>
+                      <div style={{position: "relative", top: 160}}>
                          <Link to={REGISTRATION_ROUTE} style={{textDecoration: "none", color: "white", fontSize: 20, marginLeft: 220}}>Нет аккаунта?</Link>
                       </div>
                         :
-                        <div style={{position: "relative", top: 180}}>
+                        <div style={{position: "relative", top: 160}}>
                           <Link to={LOGIN_ROUTE} style={{textDecoration: "none", color: "white", fontSize: 20, marginLeft: 220}}>Есть аккаунт?</Link>
                         </div>
                       }
-                        <Button onClick={() => user.setIsAuth(true)} variant="outline-light" style={{width: 180, height: 60, position: "relative", left: 50, top: 50}}>
+                        <Button onClick={() => user.setIsAuth(true)} variant="outline-light" style={{width: 180, height: 60, position: "relative", left: 50, top: 30}}>
                           <Link to = {MAIN_ROUTE} style={{color: "white", textDecoration: "none"}}>{isLogin ? 'Войти' : 'Регистрация'} </Link> 
                       </Button>
                   </Form>
